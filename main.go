@@ -2,13 +2,13 @@ package main
 
 import (
 	"github.com/gorilla/mux"
-	"io"
 	"log"
 	"net/http"
 )
 
 func HealthCheckHandler(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, `Hello world!`)
+	w.Write([]byte("Hello World!"))
+	return
 }
 
 func main() {
